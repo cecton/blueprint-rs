@@ -9,6 +9,7 @@ use crate::html_select::*;
 use crate::icon::*;
 use crate::input_group::*;
 use crate::menu::*;
+use crate::numeric_input::*;
 use crate::progressbar::*;
 use crate::switch::*;
 use crate::tabs::*;
@@ -178,6 +179,12 @@ impl Component for App {
                                         .callback(|_| Msg::GoToMenu(DocMenu::Menu))
                                 />
                                 <MenuItem
+                                    text={html!("NumericInput")}
+                                    href="#numeric-input"
+                                    onclick=self.link
+                                        .callback(|_| Msg::GoToMenu(DocMenu::NumericInput))
+                                />
+                                <MenuItem
                                     text={html!("ProgressBar")}
                                     href="#progress-bar"
                                     onclick=self.link
@@ -236,12 +243,13 @@ impl Component for App {
                                         DocMenu::Callout => html!(<CalloutDoc />),
                                         DocMenu::Card => html!(<CardDoc />),
                                         DocMenu::Collapse => html!(<CollapseDoc />),
-                                        DocMenu::ControlGroup => html!(<ControlGroupDoc />),
                                         DocMenu::Divider => html!(<DividerDoc />),
                                         DocMenu::HtmlSelect => html!(<HtmlSelectDoc />),
                                         DocMenu::Icon => html!(<IconDoc />),
-                                        DocMenu::InputGroup => html!(<InputGroupDoc />),
                                         DocMenu::Menu => html!(<MenuDoc />),
+                                        DocMenu::NumericInput => html!(<NumericInputDoc />),
+                                        DocMenu::ControlGroup => html!(<ControlGroupDoc />),
+                                        DocMenu::InputGroup => html!(<InputGroupDoc />),
                                         DocMenu::ProgressBar => html!(<ProgressBarDoc />),
                                         DocMenu::Switch => html!(<SwitchDoc />),
                                         DocMenu::Tabs => html!(<TabsDoc />),
@@ -283,6 +291,8 @@ pub enum DocMenu {
     InputGroup,
     #[to = "/#menu"]
     Menu,
+    #[to = "/#numeric-input"]
+    NumericInput,
     #[to = "/#progress-bar"]
     ProgressBar,
     #[to = "/#switch"]
