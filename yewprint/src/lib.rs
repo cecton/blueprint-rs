@@ -4,6 +4,7 @@
     clippy::inconsistent_struct_constructor
 )]
 
+mod breadcrumbs;
 mod button_group;
 mod buttons;
 mod callout;
@@ -16,6 +17,7 @@ mod html_select;
 mod icon;
 mod input_group;
 mod menu;
+mod overflow_list;
 mod progressbar;
 mod radio;
 mod radio_group;
@@ -29,6 +31,7 @@ mod textarea;
 #[cfg(feature = "tree")]
 mod tree;
 
+pub use breadcrumbs::*;
 pub use button_group::*;
 pub use buttons::*;
 pub use callout::*;
@@ -43,6 +46,7 @@ pub use icon::*;
 pub use id_tree;
 pub use input_group::*;
 pub use menu::*;
+pub use overflow_list::*;
 pub use progressbar::*;
 pub use radio::*;
 pub use radio_group::*;

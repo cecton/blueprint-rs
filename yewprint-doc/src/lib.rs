@@ -1,6 +1,7 @@
 #![allow(clippy::redundant_closure, clippy::needless_update, dead_code)]
 
 mod app;
+mod breadcrumbs;
 mod button_group;
 mod buttons;
 mod callout;
